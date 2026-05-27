@@ -91,7 +91,7 @@ public class Controller : MonoBehaviour
             {
                 XImage img = XImage.FromStream(() => ms);
 
-                // Ajusta página ao tamanho da imagem
+                // Ajusta pÃ¡gina ao tamanho da imagem
                 page.Width = img.PixelWidth;
                 page.Height = img.PixelHeight;
 
@@ -114,130 +114,13 @@ public class Controller : MonoBehaviour
 
     void Start()
     {
-        /*
-        System.Random rando = new System.Random(8212520);
-        Screen.fullScreen = false;
-        int x=0, y=0, z=0;
-        for(int i = 0; i < 5; i++)
-        {
-            for (int j = 0; j < 5; j++)
-            {
-                for (int k = 0; k < 5; k++)
-                {
-                    GameObject a = Instantiate(cubo, new Vector3(x, y, z), Quaternion.identity);
-                    cubos[i, j, k] = a;
-                    x += 2;
-                    
-                }
-                x = 0;
-                y += 2;
-            }
-            y = 0;
-            z += 2;
-        }
-        z = 0;
-
-        int rand = rando.Next(0, 5);
-        switch (rand)
-        {
-            case 0:
-                int randomX, randomZ;
-                bool ePraRodar = true;
-                int contador = 0;
-                while (ePraRodar)
-                {
-                    contador++;
-                    randomX = rando.Next(0, 5);
-                    randomZ = rando.Next(0, 5);
-                    if ((randomX == 0 || randomX == 4 || randomZ == 0 || randomZ == 4))
-                    {
-                        cubos[randomX, rand, randomZ].GetComponent<Renderer>().material = materiais[0];
-                        ePraRodar = false;
-                    }
-                    if(contador > 100)
-                    {
-                        Debug.LogError("Ficou preso");
-                    }
-                }
-                break;
-            case 1:
-                int randX, randZ;
-                randX = rando.Next(0, 2);
-                randZ = rando.Next(0, 2); ;
-                if(randX == 1) { randX = 4; }
-                if(randZ == 1) { randZ = 4; }
-                cubos[randX, rand, randZ].GetComponent<Renderer>().material = materiais[0];
-                break;
-            case 2:
-                int randX1, randZ1;
-                randX1 = rando.Next(0, 2);
-                randZ1 = rando.Next(0, 2);
-                if (randX1 == 1) { randX1 = 4; }
-                if (randZ1 == 1) { randZ1 = 4; }
-                cubos[randX1, rand, randZ1].GetComponent<Renderer>().material = materiais[0];
-                break;
-            case 3:
-                int randX2, randZ2;
-                randX2 = rando.Next(0, 2);
-                randZ2 = rando.Next(0, 2);
-                if (randX2 == 1) { randX2 = 4; }
-                if (randZ2 == 1) { randZ2 = 4; }
-                cubos[randX2, rand, randZ2].GetComponent<Renderer>().material = materiais[0];
-                break;
-            case 4:
-                int randomX1, randomZ1;
-                bool ePraRodar1 = true;
-                int contador1 = 0;
-                while (ePraRodar1)
-                {
-                    contador1++;
-                    randomX1 = rando.Next(0, 5);
-                    randomZ1 = rando.Next(0, 5);
-                    if ((randomX1 == 0 || randomX1 == 4 || randomZ1 == 0 || randomZ1 == 4))
-                    {
-                        cubos[randomX1, rand, randomZ1].GetComponent<Renderer>().material = materiais[0];
-                        ePraRodar1 = false;
-                    }
-                    if (contador1 > 100)
-                    {
-                        Debug.LogError("Ficou preso");
-                    }
-                }
-                break;
-        }
-
-        int contadorQualColocar = 1;
-        for(int i = 0; i < 37; i++)
-        {
-            bool podePassar = false;
-            int contador = 0;
-            while (!podePassar)
-            {
-                contador++;
-                int a, b, c;
-                a = rando.Next(0, 5);
-                b = rando.Next(0, 5);
-                c = rando.Next(0, 5);
-                if (cubos[a, b, c].GetComponent<Renderer>().sharedMaterial == materialBase && (a != 2 || b != 2 || c !=2))
-                {
-                    cubos[a, b, c].GetComponent<Renderer>().material = materiais[contadorQualColocar];
-                    podePassar = true;
-                }
-                if(contador > 100)
-                {
-                    Debug.LogError("Ficou preso");
-                    break;
-                }
-            }
-            contadorQualColocar++;
-        }*/
+       
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        //1053
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -292,38 +175,7 @@ public class Controller : MonoBehaviour
             imagemVisores[qualVisor].SetActive(true);
             ChecaVisor();
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (vai == 1) vai = 0;
-            else vai = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            GiraX(0, vai);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GiraX(1, vai);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            GiraY(0, vai);
-        }
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            GiraY(1, vai);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            GiraZ(0, vai);
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            GiraZ(1, vai);
-        }
-        */
+       
     }
 
     private void ParaDeGirar()
@@ -341,14 +193,14 @@ public class Controller : MonoBehaviour
         {
             filho.SetParent(null);
 
-            // Corrigir posição para grid
+            // Corrigir posiÃ§Ã£o para grid
             Vector3 pos = filho.position;
             pos.x = Mathf.Round(pos.x / 2f) * 2f;
             pos.y = Mathf.Round(pos.y / 2f) * 2f;
             pos.z = Mathf.Round(pos.z / 2f) * 2f;
             filho.position = pos;
 
-            // Corrigir rotação para múltiplos de 90
+            // Corrigir rotaÃ§Ã£o para mÃºltiplos de 90
             Vector3 rot = filho.eulerAngles;
             rot.x = Mathf.Round(rot.x / 90f) * 90f;
             rot.y = Mathf.Round(rot.y / 90f) * 90f;
@@ -383,7 +235,7 @@ public class Controller : MonoBehaviour
         girador = giradorY[qualGirador];
         girando = true;
 
-        //Salvando as rotações dos cubos
+        //Salvando as rotaÃ§Ãµes dos cubos
         foreach (Transform filho in girador.transform)
         {
             rotacoesOriginais[filho] = filho.rotation;
@@ -405,7 +257,7 @@ public class Controller : MonoBehaviour
         girador = giradorX[qualGirador];
         girando = true;
 
-        //Salvando as rotações dos cubos
+        //Salvando as rotaÃ§Ãµes dos cubos
         foreach (Transform filho in girador.transform)
         {
             rotacoesOriginais[filho] = filho.rotation;
@@ -437,7 +289,7 @@ public class Controller : MonoBehaviour
         girador = giradorZ[qualGirador];
         girando = true;
 
-        //Salvando as rotações dos cubos
+        //Salvando as rotaÃ§Ãµes dos cubos
         foreach (Transform filho in girador.transform)
         {
             rotacoesOriginais[filho] = filho.rotation;
